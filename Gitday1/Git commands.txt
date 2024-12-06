@@ -1,0 +1,89 @@
+1. Setup and Configuration
+git config --global user.name "Your Name"
+Set your name for commits.
+
+git config --global user.email "you@example.com"
+Set your email for commits.
+
+2. Initialize and Clone Repositories
+git init
+Initialize a new Git repository.
+
+git clone <repository_url>
+Clone an existing repository from a URL.
+
+3. Basic Operations
+git status
+Show the current state of the working directory and staging area.
+
+git add <file>
+Stage a specific file for commit.
+
+git add .
+Stage all changes in the directory for commit.
+
+git commit -m "Commit message"
+Commit the staged changes with a message.
+
+git commit -am "Commit message"
+Add and commit changes in one command (for tracked files).
+
+4. Branching and Merging
+git branch
+List all branches.
+
+git branch <branch_name>
+Create a new branch.
+
+git checkout <branch_name>
+Switch to a specific branch.
+
+git checkout -b <branch_name>
+Create and switch to a new branch.
+
+git merge <branch_name>
+Merge the specified branch into the current branch.
+
+5. Pull and Push
+git push
+Push your commits to the remote repository.
+
+git push origin <branch_name>
+Push a specific branch to the remote repository.
+
+git pull
+Fetch and merge changes from the remote repository.
+
+6. Undo Changes
+git reset <file>
+Unstage a file.
+
+git reset --soft HEAD~1
+Undo the last commit but keep changes staged.
+
+git reset --hard HEAD~1
+Undo the last commit and discard all changes.
+
+7. Viewing History
+git log
+View commit history.
+
+git log --oneline
+View a simplified commit history.
+
+8. Stashing
+git stash
+Temporarily save changes without committing.
+
+git stash apply
+Reapply stashed changes.
+
+9. Remove Files
+git rm <file>
+Remove a file from the repository and stage the removal.
+10. Remote Operations
+git remote -v
+View remote URLs.
+
+git remote add origin <repository_url>
+Add a remote repository.
