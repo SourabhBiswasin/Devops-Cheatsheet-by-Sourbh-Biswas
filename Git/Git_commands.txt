@@ -117,6 +117,10 @@ git remote set-url origin https://github.com/SourabhBiswasin/devops.git
 9)Force Push
 git push --force
 
+10) Allow Merging of Unrelated Histories (Trouble shoot step)
+git pull origin main --allow-unrelated-histories
+
+
 ------------------------------------------------------------------------------------------------------------------------------------------
 #Undo Changes
 
