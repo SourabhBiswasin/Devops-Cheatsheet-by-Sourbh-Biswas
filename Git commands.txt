@@ -1,11 +1,21 @@
-1. Setup and Configuration
-git config --global user.name "Your Name"
+# Setup and Configuration
+1) git config --global user.name "Your Name"
 Set your name for commits.
 
-git config --global user.email "you@example.com"
+2)git config --global user.email "you@example.com"
 Set your email for commits.
+
+3)Verify Configuration:
+git config --list
+
+4)Set Up Default Text Editor Nano
+git config --global core.editor "nano"
+
+5)Set Up Default Text Editor VS Code
+git config --global core.editor "code --wait"
+
 --------------------------------------------------------------------------------------------------------------------------------
-2. Initialize and Clone Repositories
+# Initialize and Clone Repositories
 git init
 Initialize a new Git repository.
 
@@ -14,7 +24,7 @@ Clone an existing repository from a URL.
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-3. Basic Operations
+# Basic Operations
 git status
 Show the current state of the working directory and staging area.
 
@@ -30,89 +40,116 @@ Commit the staged changes with a message.
 **git commit -am "Commit message"
 Add and commit changes in one command (for tracked files).
 
-
 git revert <commit_hash>
 Undo changes introduced by a specific commit
 
 **git revert HEAD
 Undo changes introduced by a last commit
 
+---------------------------------------------------------------------------------------------------------------------------------------
+# Branching and Merging
 
------------------------------------------------------------------------------------------------------------------------------------
-10. Remote Operations
-git remote -v
-View remote URLs.
-
-git remote add origin <repository_url>
-Add a remote repository.
-
-Update the Remote URL
-git remote set-url origin https://github.com/SourabhBiswasin/devops.git
-
-
-----------------------------------------------------------------------------------------------------------------------------------------
-
-4. Branching and Merging
+1) List all branches.
 git branch
-List all branches.
 
+2) Create a new branch.
 git branch <branch_name>
-Create a new branch.
 
+3) Switch to a specific branch.
 git checkout <branch_name>
-Switch to a specific branch.
 
+4) Create and switch to a new branch.
 git checkout -b <branch_name>
-Create and switch to a new branch.
 
+5) Merge the specified branch into the current branch.
 git merge <branch_name>
-Merge the specified branch into the current branch.
 
+6) To add branch in the remote repo/ do it before push the change to remote repo.
 git push --set-upstream origin <branch_name>
-To add branch in the remote repo/ do it before push the change to remote repo.
+
 ------------------------------------------------------------------------------------------------------------------------------------------
-5. Pull and Push
+# Pull Push & Remote Operations
+1) Push your commits to the remote repository.
 git push
-Push your commits to the remote repository.
 
+2) Push a specific branch to the remote repository. 
 git push origin <branch_name>
-Push a specific branch to the remote repository.
 
+3) Fetch and merge changes from the remote repository.
 git pull
-Fetch and merge changes from the remote repository.
 
+4) Push local repo to remote repository.
 git push origin <git url>
 
-------------------------------------------------------------------------------------------------------------------------------------------
+5) git push <repo name only> <branch name>
+To push repo change to a particular branch
 
-6. Undo Changes
+6) View remote repo location/version/URLS. 
+git remote -v
+
+7) Add a remote repository. 
+git remote add origin <repository_url>
+
+8) Update the Remote URL
+git remote set-url origin https://github.com/SourabhBiswasin/devops.git
+
+------------------------------------------------------------------------------------------------------------------------------------------
+#Undo Changes
+
+1) Undo Changes
 git reset <file>
 Unstage a file.
 
-git reset --soft HEAD~1
+2) git reset --soft HEAD~1
 Undo the last commit but keep changes staged.
 
-git reset --hard HEAD~1
+3 git reset --hard HEAD~1
 Undo the last commit and discard all changes.
 
 -------------------------------------------------------------------------------------------------------------------------------------------
+#History & Stashing
 
-7. Viewing History
+1) Viewing History
 git log
 View commit history.
 
-git log --oneline
+2) git log --oneline
 View a simplified commit history.
 
-8. Stashing
+3) Stashing
 git stash
 Temporarily save changes without committing.
 
+4) Reapply stashed changes 
 git stash apply
-Reapply stashed changes.
 
-9. Remove Files
+---------------------------------------------------------------------------------------------------------------------------
+#Remove and Move Files
+
+1) Remove Files
 git rm <file>
 Remove a file from the repository and stage the removal.
+
+2) Remove Tracked or Tracking files
+git rm -r --cached <folder name or files name>
+Remove a folder/file from the stage.
+
+3) Remove folder Recursively( Delete everything in the folder including sub-folders and files)
+git rm -r <folder name>
+
+4) Remove folder Recursively/Forcefully
+git rm -rf <folder name>
+ 
+5) Rename old_file.txt to new_file.txt:
+git mv old_file.txt new_file.txt
+
+6) Move a File to a Directory(example.txt to the docs folder:}
+git mv example.txt docs/
+
+7) Rename or Move a Directory(old_folder to new_folder)
+git mv old_folder new_folder
+
+8) Move old_folder to new_folder
+git mv old_folder new_folder
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
