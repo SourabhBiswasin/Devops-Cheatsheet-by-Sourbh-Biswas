@@ -47,25 +47,46 @@ Undo changes introduced by a specific commit
 Undo changes introduced by a last commit
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-# Branching and Merging
+# Branching, Merging, Delete branch
 
-1) List all branches.
+1) List all local branches.
 git branch
 
-2) Create a new branch.
+2) List all remote branches.
+git branch -r
+
+3) Create a new branch.
 git branch <branch_name>
 
-3) Switch to a specific branch.
+4) Switch to a specific branch.
 git checkout <branch_name>
 
-4) Create and switch to a new branch.
+5) Create and switch to a new branch.
 git checkout -b <branch_name>
 
-5) Merge the specified branch into the current branch.
+6) Merge the specified branch into the current branch.
 git merge <branch_name>
 
-6) To add branch in the remote repo/ do it before push the change to remote repo.
+7) To add branch in the remote repo/ do it before push the change to remote repo.
 git push --set-upstream origin <branch_name>
+
+8)Delete a Local Branch
+git branch -d <branch_name>
+
+8)Force Delete a local Branch
+git branch -D <branch_name>
+
+9)Delete a Remote Branch
+git push origin --delete <branch_name>
+
+10)Fetch and Prune Locale Stale Branches
+git fetch --prune
+
+11)Fetch and Prune Specific Remote Branches
+git fetch --prune <remote_name>
+git fetch --prune origin
+
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 # Pull Push & Remote Operations
@@ -92,6 +113,9 @@ git remote add origin <repository_url>
 
 8) Update the Remote URL
 git remote set-url origin https://github.com/SourabhBiswasin/devops.git
+
+9)Force Push
+git push --force
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 #Undo Changes
