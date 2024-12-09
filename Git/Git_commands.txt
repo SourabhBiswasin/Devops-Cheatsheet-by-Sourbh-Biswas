@@ -2,49 +2,64 @@
 1) git config --global user.name "Your Name"
 Set your name for commits.
 
-2)git config --global user.email "you@example.com"
+2) git config --global user.email "you@example.com"
 Set your email for commits.
 
-3)Verify Configuration:
+3) Verify Configuration:
 git config --list
 
-4)Set Up Default Text Editor Nano
+4) Set Up Default Text Editor Nano
 git config --global core.editor "nano"
 
-5)Set Up Default Text Editor VS Code
+5) Set Up Default Text Editor VS Code
 git config --global core.editor "code --wait"
 
 --------------------------------------------------------------------------------------------------------------------------------
 # Initialize and Clone Repositories
-git init
+1) git init
 Initialize a new Git repository.
 
-git clone <repository_url>
+2) git clone <repository_url>
 Clone an existing repository from a URL.
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
 # Basic Operations
-git status
+1) git status
 Show the current state of the working directory and staging area.
 
-git add <file>
+2) git add <file>
 Stage a specific file for commit.
 
-git add .
+3) git add .
 Stage all changes in the directory for commit.
 
-git commit -m "Commit message"
+4) git stash 
+Temporarily save your changes. Use When code or feature is not completed but need to save changes of half done work
+
+5) git stash list
+List saved changes during git stash command 
+
+6) git stash pop
+Applies the stashed changes and removes them from the stash list.
+
+7) git stash apply	
+Applies the stashed changes but does not remove them from the stash list.
+
+8) git commit -m "Commit message"
 Commit the staged changes with a message.
 
-**git commit -am "Commit message"
+9) git commit -am "Commit message"
 Add and commit changes in one command (for tracked files).
 
-git revert <commit_hash>
+10) git revert <commit_hash>
 Undo changes introduced by a specific commit
 
-**git revert HEAD
+11) git revert HEAD
 Undo changes introduced by a last commit
+
+12) git reword
+Modify the commit message.
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 # Branching, Merging, Delete branch
@@ -70,21 +85,57 @@ git merge <branch_name>
 7) To add branch in the remote repo/ do it before push the change to remote repo.
 git push --set-upstream origin <branch_name>
 
-8)Delete a Local Branch
+8) Delete a Local Branch
 git branch -d <branch_name>
 
-8)Force Delete a local Branch
+8) Force Delete a local Branch
 git branch -D <branch_name>
 
-9)Delete a Remote Branch
+9) Delete a Remote Branch
 git push origin --delete <branch_name>
 
-10)Fetch and Prune Locale Stale Branches
+10) Fetch and Prune Locale Stale Branches
 git fetch --prune
 
-11)Fetch and Prune Specific Remote Branches
+11) Fetch and Prune Specific Remote Branches
 git fetch --prune <remote_name>
 git fetch --prune origin
+
+12) **Git rebase command**
+Common Use Cases for git rebase is updating a branch with changes from the main branch.
+
+Example
+git checkout feature-branch(Note: - Or the branch Name)
+git rebase main
+This rewrites the feature-branch commit history to include the latest commits from main.
+
+git rebase -i HEAD~n (Note: - Replace n with the number of commits you want to interactively rebase) 
+Open Interactive Rebase (Use interactive mode to edit, squash, or reorder commits)
+
+Note:-
+pick: Keep the commit as-is.
+squash: Combine this commit with the previous one.
+reword: Modify the commit message.
+edit: Pause the rebase process to amend this commit.
+
+git rebase --onto <branch-name-you want to add commit from another branch> <Name of the commit/commit ID you want to skip> <branch-name you want to copy the commit from>
+
+Example
+main:       A --- B --- C --- D --- E
+feature:                        C --- D --- E
+You want to move commits D and E from feature onto the main branch, skipping commit C.
+git checkout feature
+git rebase --onto main C feature
+
+git rebase --continue
+Continue the rebase process
+
+git rebase --abort
+If you want to cancel the rebase
+
+
+
+
 
 
 
@@ -122,7 +173,7 @@ git pull origin main --allow-unrelated-histories
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-#Undo Changes
+#Undo Changes OR Rename commit messages
 
 1) Undo Changes
 git reset <file>
@@ -131,8 +182,44 @@ Unstage a file.
 2) git reset --soft HEAD~1
 Undo the last commit but keep changes staged.
 
-3 git reset --hard HEAD~1
-Undo the last commit and discard all changes.
+3) git reset --hard HEAD~1 or git reset --hard
+Undo the last commit and discard all changes. After "~" sign we will be directed git will consider the head below to mentioned number. 
+
+4) git revert <commit ID name>
+Create a new commit that undoes the changes made by a mentioned commit ID. It is a safe operation compare to git reset.
+
+5) git revert <commit ID name> --hard
+Hard revert the mentioned commit ID and delete the files as well from the branch permanentely.
+
+4) git commit --amend -m "New commit message"
+Rename the last commit message
+
+5) git commit --amend
+modifies the most recent commit in Git by combining staged changes with it
+
+6) #Steps to Reword/rewrite an Older Commit
+git rebase -i HEAD~n
+
+Note: - Replace "n" with the number of commits you want to see and edit. 
+
+Example: - 
+git rebase -i HEAD~3
+
+Example Output
+pick abc123 Commit message 1
+pick def456 Commit message 2
+pick ghi789 Commit message 3
+
+Change the word pick to reword (or r) for the commit you want to edit:
+pick abc123 Commit message 1
+reword def456 Commit message 2
+pick ghi789 Commit message 3
+
+Modify the Commit Message:
+
+Git will open an editor where you can edit the commit message. Save and close the editor when done.
+Git will then apply the changes and rewrite the history.
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 #History & Stashing
