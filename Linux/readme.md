@@ -1,14 +1,21 @@
-![Linux commands categories](image.png)
+![Linux commands categories](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#directory)(image.png)
 
-
-
-- [File and Directory Operations Commands](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#directory) 
-
-- [File Permission Commands](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#permission)
+- [File and Directory Operations Commands](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#directory)
+ -File and directory operations are fundamental in working with the Linux operating system. 
 
 - [Process Management Commands](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#management)
- -process management commands allow you to monitor and control running processes on the system.
+ -Process management commands allow you to monitor and control running processes on the system.
 
+- [System Information Commands](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#system)
+ -Commands available to gather system information.
+
+- [User Management Commands](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#user)
+ -User management commands allow you to create, modify, and manage user accounts on the system.
+
+- [Networking Commands](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#networking)
+ -Networking commands available to manage and troubleshoot network connections.
+
+- [File Permission Commands](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#permission)
 
 Linux commands https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp
 
