@@ -1,4 +1,4 @@
-![[Linux commands categories](image.png)](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#directory) 
+![Linux commands categories](image.png)
 
 - [File and Directory Operations Commands](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#directory)
  -File and directory operations are fundamental in working with the Linux operating system. 
