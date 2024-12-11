@@ -13,6 +13,8 @@ Example Code
 ```bash
 docker run -d --name=<give_container_name> -v D:/<volume location of local host or of another container>:/<volume location_of_container_or_foldername_of_desired_container> <image_name> bash
 ```
+-v refer to volume mapping
+-d refer to run container is detch mode
 
 Note: - Volume mapping can be done on while creating a new container only. WE can't do it on already available containers.
 
@@ -21,3 +23,5 @@ Note: - Volume mapping can be done on while creating a new container only. WE ca
 ```bash
 docker run -d -p 8009<enter_port_as_per_our_need>:80<default_port_of_container_or_image> <image_name>
 ```
+-p refer to port mapping
+-d refer to run container is detch mode
