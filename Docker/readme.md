@@ -14,4 +14,10 @@ Example Code
 docker run -d --name=<give_container_name> -v D:/<volume location of local host or of another container>:/<volume location_of_container_or_foldername_of_desired_container> <image_name> bash
 ```
 
-Note: - Volume mapping can be done on while creating a new container only. WE can't do it on already create containers.
+Note: - Volume mapping can be done on while creating a new container only. WE can't do it on already available containers.
+
+#Docker port mapping
+
+```bash
+docker run -d -p 8009<enter_port_as_per_our_need>:80<default_port_of_container_or_image> <image_name>
+```
