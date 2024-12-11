@@ -1,0 +1,65 @@
+# Linux Shell Commands for Jenkins
+
+1) Start Jenkins:
+sudo service jenkins start
+
+2) Stop Jenkins:
+sudo service jenkins stop
+
+3) Restart Jenkins:
+sudo service jenkins restart
+
+4) Restart Jenkins:
+sudo service jenkins status
+
+
+#Note: - We can also create pipeline using a Jenkins file, just place the file by the name Jenkins in the root folder. Or we can give custom path and file name during configuration of pipeline. 
+
+#Jenkins CLI Commands
+
+1) Access Jenkins CLI:
+java -jar jenkins-cli.jar -s <JENKINS_URL> <COMMAND>
+Replace <JENKINS_URL> with your Jenkins server URL (e.g., http://localhost:8080).
+
+2) List all jobs:
+java -jar jenkins-cli.jar -s <JENKINS_URL> list-jobs
+
+3) Trigger a job:
+java -jar jenkins-cli.jar -s <JENKINS_URL> build <JOB_NAME>
+
+4) Get job output (console):
+java -jar jenkins-cli.jar -s <JENKINS_URL> console <JOB_NAME>
+
+5) Reload configuration:
+java -jar jenkins-cli.jar -s <JENKINS_URL> reload-configuration
+
+6) Restart Jenkins:
+java -jar jenkins-cli.jar -s <JENKINS_URL> safe-restart
+
+#Pipeline (Scripted/Declarative) Commands
+1) Scripted Pipeline:
+-----Groovy Script----------------
+
+node {
+    stage('Build') {
+        sh 'mvn clean install'
+    }
+}
+
+2) Declarative Pipeline:
+-----Groovy Script----------------
+
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+    }
+}
+
+
+
+
