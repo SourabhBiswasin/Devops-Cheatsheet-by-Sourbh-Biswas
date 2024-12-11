@@ -2,7 +2,12 @@
 
 
 
-- File and Directory Operations Commands [File and Directory Operations Commands](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#directory) 
+- [File and Directory Operations Commands](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#directory) 
+
+- [File Permission Commands](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#permission)
+
+- [Process Management Commands](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#management)
+ -process management commands allow you to monitor and control running processes on the system.
 
 
 Linux commands https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp
