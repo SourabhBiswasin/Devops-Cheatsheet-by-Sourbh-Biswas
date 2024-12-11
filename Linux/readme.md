@@ -1,6 +1,10 @@
 ![Linux commands categories](image.png)
 
 
+
+- File and Directory Operations Commands [link](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#directory) 
+
+
 Linux commands https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp
 
 chmod cheatsheet https://quickref.me/chmod
