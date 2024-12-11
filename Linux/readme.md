@@ -1,4 +1,4 @@
-![[Linux commands categories](image.png)](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp)
+![Linux commands categories](image.png)(https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp)
 
 Linux commands https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp
 
