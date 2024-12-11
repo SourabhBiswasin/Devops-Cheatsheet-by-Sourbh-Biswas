@@ -2,7 +2,7 @@
 
 
 
-- File and Directory Operations Commands [link](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#directory) 
+- File and Directory Operations Commands [File and Directory Operations Commands](https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp#directory) 
 
 
 Linux commands https://www.geeksforgeeks.org/linux-commands-cheat-sheet/?ref=lbp
