@@ -59,3 +59,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
  ``` 
+
+# Setup self-hosted runners
+
+[LINK](https://www.youtube.com/watch?v=Rb2pUKdmdYo)
