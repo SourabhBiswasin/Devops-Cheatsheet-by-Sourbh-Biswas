@@ -37,3 +37,9 @@ docker run -d -p 8009<enter_port_as_per_our_need>:80<default_port_of_container_o
 ```
 -p refer to port mapping
 -d refer to run container is detch mode
+
+## Rename docker image
+
+```bash
+docker tag <old_image_name> <new_image_name>
+```
