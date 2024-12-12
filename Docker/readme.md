@@ -18,6 +18,18 @@ docker run -d --name=<give_container_name> -v D:/<volume location of local host 
 
 Note: - Volume mapping can be done on while creating a new container only. WE can't do it on already available containers.
 
+## Remove docker volume mapping
+
+First stop the container and remove the volume using command
+
+```bash
+docker rm volume <volume_name>
+```
+or 
+
+```bash
+docker rm volume prune
+```
 # Docker port mapping
 
 ```bash
