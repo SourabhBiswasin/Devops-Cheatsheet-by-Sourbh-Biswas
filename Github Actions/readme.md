@@ -62,4 +62,9 @@ jobs:
 
 # Setup self-hosted runners
 
-[LINK](https://www.youtube.com/watch?v=Rb2pUKdmdYo)
+[Video LINK](https://www.youtube.com/watch?v=Rb2pUKdmdYo)
+
+[Github docs](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners)
+
+# [Use cases and examples](https://docs.github.com/en/actions/use-cases-and-examples)
+
