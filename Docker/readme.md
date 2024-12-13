@@ -75,3 +75,16 @@ CMD ["curl", "--version"]
 # Set entrypoint to curl command
 ENTRYPOINT ["curl"]
 ```
+
+# TIPS
+
+1) To exit from a running container in a terminal without stopping the container use:-
+```bash
+CTRL+P + CTRL+Q
+```
+Note: - exit command inside container terminal will stop the container.
+
+2) To use container terminal or to go inside container use:-
+```bash
+docker exec -it <container_name> bash
+```
