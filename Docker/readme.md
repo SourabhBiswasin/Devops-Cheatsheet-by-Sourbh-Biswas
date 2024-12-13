@@ -43,3 +43,6 @@ docker run -d -p 8009<enter_port_as_per_our_need>:80<default_port_of_container_o
 ```bash
 docker tag <old_image_name> <new_image_name>
 ```
+
+# [Docker compose documentation](https://docs.docker.com/reference/compose-file/services/)
+ - Docker compose is used to manage multiple container such as creating containers, volume mapping, port mapping and networks.
