@@ -6,7 +6,7 @@ https://quickref.me/kubernetes
 # Building Blocks of Kubernetes
 Or K8s Service name
 
-1) ## Pod
+1) ## [Pod](#pod)
 2) ## Service
 3) ## ReplicaSet
 4) ## ConfigMap
