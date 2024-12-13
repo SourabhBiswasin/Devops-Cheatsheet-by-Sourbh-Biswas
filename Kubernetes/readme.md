@@ -3,20 +3,30 @@
 https://quickref.me/kubernetes
 
 
-# Building Blocks of Kubernetes
+# Core resources of Kubernetes
 Or K8s Service name
 
 1. ## [Pod](#detailed-description-of-pod)
 2) ## [Service](#detailed-description-of-service)
 3) ## [ReplicaSet](#detailed-description-of-replicaset)
 4) ## [ConfigMap](#detailed-description-of-configmap)
-   
+5) ## [Secrets](#detailed-description-of-secrets)
+6) ## [Deployment](#detailed-description-of-deployment) 
+7) ## [Deployment](#detailed-description-of-deployment) 
 
-5) ## Secrets
 
 ## Detailed Description of Pod
+Pod represents a single instance/server of a running process in your cluster and can contain one or more containers.
 
-## 1) K8s Pod yml file Sample Template
+### K8s Pod yml file to create Pod inside k8s
+
+Command to apply yaml in k8s. It can create new resources if they don’t exist or update existing resources to match the configuration in the file.
+```bash
+kubectl apply -f <name_of_file>
+```
+
+Sample Template
+
 ```Yaml
 apiVersion: v1
 kind: Pod
@@ -29,8 +39,13 @@ spec:
   - name: nginx-container
     image: nginx
 ```
+
+
 ## Detailed Description of Service
-## 2) K8s Service yml file Sample Template
+Service work on top of Pod. Services enable communication between different components in a Kubernetes cluster, allowing stable networking for Pods even if they are ephemeral(pod are down) and their IP addresses change.
+
+### K8s Service yml file to create Service inside k8s
+Sample Template
 
 ```Yaml
 apiVersion: v1
@@ -47,8 +62,10 @@ spec:
   type: NodePort
   ```
 ## Detailed-Description-Of-Replicaset
+ReplicaSet ensures a specified number of identical Pods are running at any given time. It provides high availability and scaling by automatically creating or deleting Pods to maintain the desired state.
 
-## 3) K8s ReplicaSet yml file Sample Template
+## K8s ReplicaSet yml file to create Replicaset inside k8s
+Sample Template
 
 ```Yaml
 # If we have ReplicaSet yaml file then Pod yaml file in not needed
@@ -118,10 +135,17 @@ config2.txt with content:
 
 ```bash
      # Create a ConfigMap named multi-file-configmap from multiple files:
+<<<<<<< HEAD
+     kubectl create configmap <configmap_name> --from-file=config1.txt --from-file=config2.txt
+    ```
+    - #### Delete command for already available configmap
+    ```bash
+=======
      kubectl create configmap multi-file-configmap --from-file=config1.txt --from-file=config2.txt
 ```
 - #### Delete command for already available configmap
 ```bash
+>>>>>>> 436fddacc266561d953e85f84866907b4fec0758
      kubectl delete configmap <configmap_name>
 ```
     OR
@@ -130,31 +154,159 @@ config2.txt with content:
      kubectl delete cm <configmap_name>
 ```
 
+<<<<<<< HEAD
+
+## K8s ConfigMap yml file to create configmap
+Sample Template
+=======
 ## 4) K8s ConfigMap yml file Sample Template
+>>>>>>> 436fddacc266561d953e85f84866907b4fec0758
 
 ```Yaml
-# If we have ReplicaSet yaml file then Pod yaml file in not needed
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: mycmwithyaml
+  name: <give_the_name_for_configmap>
 data:
   key4: val4
   key2: val2
   key3: val3
 ```
-## 5) K8s Pod yml file Sample Template with ConfigMap
+## Pod yml file with ConfigMap to create pod.
+Sample Template 
 
 ```Yaml
 apiVersion: v1
 kind: Pod
 metadata:
-  name: configmap-pod-2
+  name: <give_the_name_for_pod>
 spec:
   containers:
-  - name: nginx
-    image: nginx    
+  - name: <give_the_name_for_container>
+    image: <give_image_name_for_container>   
     envFrom:
     - configMapRef:
-        name: folder-configmap
+        name: <enter_already_create-configmap_name>
+```
+
+## Detailed-Description-Of-Secrets
+Secret is an object used to store sensitive information, such as passwords, OAuth tokens, SSH keys, or any other sensitive data. The purpose of using Secrets is to avoid putting this sensitive information directly in your Pod or Deployment configuration files, which could be exposed.
+
+
+- ### Create a secret from literal values
+
+```bash
+     kubectl create secret generic <give_name_of_secret> --from-literal username=admin --from-literal password='P@ssw0rd'
+```
+    Verify the secret:
+
+```bash
+    kubectl get secrets <enter_name_of_secret> -o yaml
+```
+The output will be base64 encoded. To decode, you can use:
+
+```bash
+    echo -n “P@ssw0rd” | base64
+```
+
+- ### Create a Secret from a File
+
+Create a file with your sensitive data
+
+username.txt and add content inside the file as: -
+```bash
+admin
+```
+password.txt and add content inside the file as: -
+```bash
+admin@123
+```
+
+```bash
+     kubectl create secret generic <give_name_of_secret> --from-file username=./username.txt --from-file password=./password.txt
+```
+    Verify the secret:
+
+```bash
+    kubectl get secrets <enter_name_of_secre> -o yaml
+```
+The output will be base64 encoded.
+
+- ### Create a YAML file for the secret
+
+```Yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-manifest-secret
+type: Opaque
+data:
+  username: YWRtaW4=    # base64 encoded value of 'admin'
+  password: UEBzc3cwcmQ=  # base64 encoded value of 'P@ssw0rd'
+```
+
+Apply the YAML file to create secret
+```bash
+kubectl apply -f my-manifest-secret.yaml
+```
+
+- ### Create a pod that uses the secret:
+```Yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: <give_name_for_pod>
+spec:
+  containers:
+  - name: <give_name_for_container>
+    image: <enter_image_name_for_container>
+    env:
+    - name: USERNAME
+      valueFrom:
+        secretKeyRef:
+          name: <give_name_for_secret>
+          key: <key_valuename_like_username>
+    - name: PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: <give_name_for_secret>
+          key: <key_valuename_like_password>
+```
+
+
+
+
+
+
+
+## Detailed-Description-Of-Deployment
+Deployment is a resource used to manage and maintain the desired state of pod during updation of pod. It provides Rolling deployments updates to Pods ensuring your application is running reliably duriing updates. Updates are exposed to an increasing percentage of users incrementally until fully released.
+
+Sample Template for deployment
+
+```Yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: <give_name_for_deployment>
+  labels:
+    app: web
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: <give_name_for_container>
+        image: <enter_imagename>
+```
+Roll Back Deployment command. It will restore previously deployment. Previous deployment is saved in k8s.
+
+```bash
+kubectl rollout undo deployment <enter_deployment_name>
 ```
