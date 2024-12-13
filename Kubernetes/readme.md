@@ -5,16 +5,16 @@ https://quickref.me/kubernetes
 
 Building Blocks of Kubernetes
 Or K8s Service name
-1) Pod
-2) Service
-3) ReplicaSet
-4) ConfigMap
-   - Create a ConfigMap from Literal Values
+1) ## Pod
+2) ## Service
+3) ## ReplicaSet
+4) ## ConfigMap
+   - ### Create a ConfigMap from Literal Values
      ```bash
      # Create a ConfigMap named example-configmap with literal values
      kubectl create configmap example-configmap --from-literal=key1=value1 --from-literal=key2=value2   
      ```
-   - Create a ConfigMap from a File
+   - ### Create a ConfigMap from a File
    ```bash   
      # Create a file named config.txt with the following content:
      key1=value1
@@ -24,7 +24,7 @@ Or K8s Service name
      # Create a ConfigMap named file-configmap from the file
      kubectl create configmap file-configmap --from-file=config.txt
     ```
-    - Create a ConfigMap from an Environment File
+    - ### Create a ConfigMap from an Environment File
    ```bash   
      # Create an environment file named env-config.env with the following content:
      ENV_VAR1=value1
@@ -34,7 +34,7 @@ Or K8s Service name
      # Create a ConfigMap named env-configmap from the environment file:
      kubectl create configmap env-configmap --from-env-file=env-config.env
     ```
-    - Create a ConfigMap from Multiple Files
+    - ### Create a ConfigMap from Multiple Files
      Create multiple files:
     config1.txt with content:
     ```bash   
@@ -49,7 +49,7 @@ Or K8s Service name
      # Create a ConfigMap named multi-file-configmap from multiple files:
      kubectl create configmap multi-file-configmap --from-file=config1.txt --from-file=config2.txt
     ```
-    - Delete command for already available configmap
+    - #### Delete command for already available configmap
     ```bash
      kubectl delete configmap <configmap_name>
     ```
@@ -59,7 +59,7 @@ Or K8s Service name
     ```
 
 
-5) Secrets
+5) ## Secrets
 
 
 ## 1) K8s Pod yml file Sample Template
