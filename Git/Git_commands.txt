@@ -133,12 +133,6 @@ Continue the rebase process
 git rebase --abort
 If you want to cancel the rebase
 
-
-
-
-
-
-
 ------------------------------------------------------------------------------------------------------------------------------------------
 # Pull Push & Remote Operations
 1) Push your commits to the remote repository.
@@ -148,7 +142,7 @@ git push
 git push origin <branch_name>
 
 3) Fetch and merge changes from the remote repository.
-git pull
+git pull <write_origin> <branch_name>
 
 4) Push local repo to remote repository.
 git push origin <git url>
