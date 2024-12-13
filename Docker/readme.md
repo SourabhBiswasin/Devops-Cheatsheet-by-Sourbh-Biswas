@@ -48,3 +48,30 @@ docker tag <old_image_name> <new_image_name>
  - Docker compose is used to manage multiple container such as creating containers, volume mapping, port mapping and networks.
 
 ## [Examples of docker compose files](https://docs.github.com/en/actions/use-cases-and-examples)
+
+# Docker file create: -  
+Sample template
+
+```bash
+# Use an official Ubuntu base image
+FROM ubuntu:20.04
+# Note for FROM command:- Enter the image name in FROM
+
+COPY <enter_location_path_here>
+# Note for COPY command:- Add . . to copy from root folder/directory Example: - target/Sourabh-Calculator.jar
+
+# RUN: Executes commands at build time to install software, download dependencies, or configure the environment. The result is saved in the image.
+RUN apt-get update && apt-get install -y curl
+# Note for COPY command:- give any linux command in the RUN. We can write multiple RUN commands in single docker file
+
+# Print the version of curl
+RUN curl --version
+
+# CMD: Specifies the default command to be executed when a container starts. It can be overridden when running a container.
+# Set default command to display the curl version
+CMD ["curl", "--version"]
+
+# ENTRYPOINT: Defines the main executable for the container, which can't be easily overridden. However, additional arguments can be passed when the container starts. When combined with CMD, CMD provides the default arguments for ENTRYPOINT.
+# Set entrypoint to curl command
+ENTRYPOINT ["curl"]
+```
