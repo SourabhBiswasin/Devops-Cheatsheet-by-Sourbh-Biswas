@@ -7,9 +7,71 @@ https://quickref.me/kubernetes
 Or K8s Service name
 
 1. ## [Pod](#detailed-description-of-pod)
-2) ## Service
-3) ## ReplicaSet
-4) ## ConfigMap
+2) ## [Service](#detailed-description-of-service)
+3) ## [ReplicaSet](#detailed-description-of-replicaset)
+4) ## [ConfigMap](#detailed-description-of-configmap)
+   
+
+5) ## Secrets
+
+## Detailed Description of Pod
+
+## 1) K8s Pod yml file Sample Template
+```Yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-nginx-pod
+  labels:
+    app: myapp
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx
+```
+## Detailed Description of Service
+## 2) K8s Service yml file Sample Template
+
+```Yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app: myapp
+  ports:
+  - protocol: TCP
+    port: 80
+    nodePort: 30001
+  type: NodePort
+  ```
+## Detailed-Description-Of-Replicaset
+
+## 3) K8s ReplicaSet yml file Sample Template
+
+```Yaml
+# If we have ReplicaSet yaml file then Pod yaml file in not needed
+apiVersion: apps/v1       
+kind: ReplicaSet          
+metadata:
+  name: nginx-replicaset  
+spec:
+  replicas: 3             
+  selector:
+    matchLabels:          
+      app: myapp          
+  template:               
+    metadata:
+      labels:
+        app: myapp        
+    spec:
+      containers:
+      - name: nginx       
+        image: nginx
+```
+## Detailed-Description-Of-Configmap
+
    - ### Create a ConfigMap from Literal Values
      ```bash
      # Create a ConfigMap named example-configmap with literal values
@@ -60,61 +122,6 @@ Or K8s Service name
     ```
 
 
-5) ## Secrets
-
-## Detailed Description of Pod
-
-## 1) K8s Pod yml file Sample Template
-```Yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-nginx-pod
-  labels:
-    app: myapp
-spec:
-  containers:
-  - name: nginx-container
-    image: nginx
-```
-## 2) K8s Service yml file Sample Template
-
-```Yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-spec:
-  selector:
-    app: myapp
-  ports:
-  - protocol: TCP
-    port: 80
-    nodePort: 30001
-  type: NodePort
-  ```
-## 3) K8s ReplicaSet yml file Sample Template
-
-```Yaml
-# If we have ReplicaSet yaml file then Pod yaml file in not needed
-apiVersion: apps/v1       
-kind: ReplicaSet          
-metadata:
-  name: nginx-replicaset  
-spec:
-  replicas: 3             
-  selector:
-    matchLabels:          
-      app: myapp          
-  template:               
-    metadata:
-      labels:
-        app: myapp        
-    spec:
-      containers:
-      - name: nginx       
-        image: nginx
-```
 ## 4) K8s ConfigMap yml file Sample Template
 
 ```Yaml
