@@ -36,7 +36,7 @@ Or K8s Service name
     ```
     - Create a ConfigMap from Multiple Files
      Create multiple files:
-     config1.txt with content:
+    config1.txt with content:
     ```bash   
      key1=value1
     ```
@@ -48,6 +48,14 @@ Or K8s Service name
     ```bash
      # Create a ConfigMap named multi-file-configmap from multiple files:
      kubectl create configmap multi-file-configmap --from-file=config1.txt --from-file=config2.txt
+    ```
+    - Delete command for already available configmap
+    ```bash
+     kubectl delete configmap <configmap_name>
+    ```
+    OR
+    ```bash
+     kubectl delete cm <configmap_name>
     ```
 
 
