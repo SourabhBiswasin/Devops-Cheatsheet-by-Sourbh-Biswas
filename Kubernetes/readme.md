@@ -3,8 +3,9 @@
 https://quickref.me/kubernetes
 
 
-Building Blocks of Kubernetes
+# Building Blocks of Kubernetes
 Or K8s Service name
+
 1) ## Pod
 2) ## Service
 3) ## ReplicaSet
@@ -61,7 +62,7 @@ Or K8s Service name
 
 5) ## Secrets
 
-
+#pod
 ## 1) K8s Pod yml file Sample Template
 ```Yaml
 apiVersion: v1
