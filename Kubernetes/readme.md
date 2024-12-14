@@ -1,4 +1,4 @@
-## Cheat sheet links
+# Cheat sheet links
 
 https://quickref.me/kubernetes
 
@@ -14,7 +14,7 @@ To Run kubernetes locally in your system
   - [Rancher Server Single Node for linux](https://www.rancher.com/docs/rancher/v1.1/en/installing-rancher/installing-server/)
  
 
-To Run kubernetes production grade cluster in on=prem or cloud instances system
+To Run kubernetes production grade cluster in on-prem or cloud instances system
 - [kops for production grade Kubernetes cluster ](https://www.youtube.com/watch?v=44Qk55E6CAA&list=PLdpzxOOAlwvJdsW6A0jCz_3VaANuFMLpc&index=5/)
 - [Rancher Server Multi Nodes](https://www.rancher.com/docs/rancher/v1.1/en/installing-rancher/installing-server/multi-nodes/)
 
@@ -26,7 +26,6 @@ To Run kubernetes production grade cluster on cloud distribution
 
 
 # Resources of Kubernetes
-Or K8s Service name
 
 1. ## [Pod](#detailed-description-of-pod)
 2) ## [Service](#detailed-description-of-service)
@@ -160,7 +159,7 @@ config2.txt with content:
 
 ```bash
      # Create a ConfigMap named multi-file-configmap from multiple files:
-<<<<<<< HEAD
+
      kubectl create configmap <configmap_name> --from-file=config1.txt --from-file=config2.txt
     ```
     - #### Delete command for already available configmap
@@ -169,8 +168,8 @@ config2.txt with content:
      kubectl create configmap multi-file-configmap --from-file=config1.txt --from-file=config2.txt
 ```
 - #### Delete command for already available configmap
+
 ```bash
->>>>>>> 436fddacc266561d953e85f84866907b4fec0758
      kubectl delete configmap <configmap_name>
 ```
     OR
@@ -179,13 +178,10 @@ config2.txt with content:
      kubectl delete cm <configmap_name>
 ```
 
-<<<<<<< HEAD
-
 ## K8s ConfigMap yml file to create configmap
 Sample Template
 =======
 ## 4) K8s ConfigMap yml file Sample Template
->>>>>>> 436fddacc266561d953e85f84866907b4fec0758
 
 ```Yaml
 apiVersion: v1
