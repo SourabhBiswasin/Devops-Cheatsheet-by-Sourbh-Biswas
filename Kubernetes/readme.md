@@ -295,7 +295,7 @@ spec:
           key: <key_valuename_like_password>
 ```
 
-## Detailed-Description-Of-Deployment
+# Detailed-Description-Of-Deployment
 Deployment is a resource used to manage and maintain the desired state of pod during updation of pod. It provides Rolling deployments updates to Pods ensuring your application is running reliably duriing updates. Updates are exposed to an increasing percentage of users incrementally until fully released.
 
 Sample Template for deployment
@@ -327,7 +327,7 @@ Roll Back Deployment command. It will restore previously deployment. Previous de
 kubectl rollout undo deployment <enter_deployment_name>
 ```
 
-## Detailed-Description-Of-Namespace
+# Detailed-Description-Of-Namespace
 A namespace in Kubernetes is a logical partitioning mechanism that allows you to divide a single Kubernetes cluster into multiple virtual clusters. This enables better organization, resource isolation, and management of workloads within the cluster.
 
 Command to create a namespace
@@ -335,7 +335,7 @@ Command to create a namespace
 kubectl run nginx --image=nginx --namespace=<insert-namespace-name-here>
 ```
 
-## Detailed-Description-of-Volume
+# Detailed-Description-of-Volume
 A Container's file system lives only as long as the Container does. So when a Container terminates and restarts, filesystem changes are lost. For more consistent storage that is independent of the Container, you can use a Volume.
 
 
@@ -368,7 +368,7 @@ Projected Volumes
 Ephemeral Volumes
 
 
-## detailed-description-of-ingress
+# detailed-description-of-ingress
 
 Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource.
 You must have an Ingress controller to satisfy an Ingress. Only creating an Ingress resource has no effect.
@@ -401,7 +401,7 @@ spec:
               number: 80
 ```
 
-## Detailed-Description-of-Istio
+# Detailed-Description-of-Istio
 
 - Sidecr Container
 
@@ -448,7 +448,7 @@ spec:
 
 - [Istio Video](https://www.youtube.com/watch?v=eSNetKBe7Z8&list=PLdpzxOOAlwvJdsW6A0jCz_3VaANuFMLpc&index=24)
 
-## Detailed-Description-Of-RBAC
+# Detailed-Description-Of-RBAC
 Role-based access control (RBAC) is a method of regulating access to computer or network resources based on the roles of individual users within your organization.
 
 [Doc](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
