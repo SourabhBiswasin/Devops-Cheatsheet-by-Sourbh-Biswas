@@ -40,10 +40,10 @@ To Run kubernetes production grade cluster on cloud distribution
 10) ## [Istio, Service meash and Sidecar container](#detailed-description-of-istio)
 11) ## [RBAC](#detailed-description-of-rbac)
 
-## Detailed Description of Pod
+# Detailed Description of Pod
 Pod represents a single instance/server of a running process in your cluster and can contain one or more containers.
 
-### K8s Pod yml file to create Pod inside k8s
+ - K8s Pod yml file to create Pod inside k8s
 
 Command to apply yaml in k8s. It can create new resources if they don’t exist or update existing resources to match the configuration in the file.
 ```bash
@@ -66,10 +66,10 @@ spec:
 ```
 
 
-## Detailed Description of Service
+# Detailed Description of Service
 Service work on top of Pod. Services enable communication between different components in a Kubernetes cluster, allowing stable networking for Pods even if they are ephemeral(pod are down) and their IP addresses change.
 
-### K8s Service yml file to create Service inside k8s
+ - K8s Service yml file to create Service inside k8s
 Sample Template
 
 ```Yaml
@@ -86,10 +86,10 @@ spec:
     nodePort: 30001
   type: NodePort
   ```
-## Detailed-Description-Of-Replicaset
+# Detailed-Description-Of-Replicaset
 ReplicaSet ensures a specified number of identical Pods are running at any given time. It provides high availability and scaling by automatically creating or deleting Pods to maintain the desired state.
 
-## K8s ReplicaSet yml file to create Replicaset inside k8s
+ - K8s ReplicaSet yml file to create Replicaset inside k8s
 Sample Template
 
 ```Yaml
@@ -112,7 +112,7 @@ spec:
       - name: nginx       
         image: nginx
 ```
-## Detailed-Description-Of-Configmap
+# Detailed-Description-Of-Configmap
 
 - ### Create a ConfigMap from Literal Values
 
