@@ -20,8 +20,8 @@ To Run kubernetes production grade cluster in on=prem or cloud instances system
 
 To Run kubernetes production grade cluster on cloud distribution
 - [RED HAT Openshift for production grade kubernetes cluster](https://www.youtube.com/watch?v=vwDezts_aFg&t=15s)
-
-
+- [AWS EKS production grade k8s](https://www.youtube.com/watch?v=RRCrY12VY_s&list=PLdpzxOOAlwvLm5lWlYctUnwaFRIO2Io_5&index=2&t=2729s&pp=iAQB)
+- [Azure AKS production grade k8s](https://youtu.be/akNSPKX0uIA?si=PUKJcGcJW4kQG8Rm)
 
 
 
