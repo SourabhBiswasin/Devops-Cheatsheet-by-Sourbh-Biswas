@@ -114,14 +114,14 @@ spec:
 ```
 # Detailed-Description-Of-Configmap
 
-- ### Create a ConfigMap from Literal Values
+ - Create a ConfigMap from Literal Values
 
 ```bash
      # Create a ConfigMap named example-configmap with literal values
      kubectl create configmap example-configmap --from-literal=key1=value1 --from-literal=key2=value2   
 ```
 
-- ### Create a ConfigMap from a File
+ - Create a ConfigMap from a File
 
 ```bash   
      # Create a file named config.txt with the following content:
@@ -133,7 +133,7 @@ spec:
      # Create a ConfigMap named file-configmap from the file
      kubectl create configmap file-configmap --from-file=config.txt
 ```
-- ### Create a ConfigMap from an Environment File
+ - Create a ConfigMap from an Environment File
 
 ```bash   
      # Create an environment file named env-config.env with the following content:
@@ -145,7 +145,7 @@ spec:
      # Create a ConfigMap named env-configmap from the environment file:
      kubectl create configmap env-configmap --from-env-file=env-config.env
 ```
-- ### Create a ConfigMap from Multiple Files
+ - Create a ConfigMap from Multiple Files
 Create multiple files:
 
 config1.txt with content:
@@ -162,13 +162,12 @@ config2.txt with content:
      # Create a ConfigMap named multi-file-configmap from multiple files:
 
      kubectl create configmap <configmap_name> --from-file=config1.txt --from-file=config2.txt
-    ```
-    - #### Delete command for already available configmap
-    ```bash
-=======
+```
+ - Delete command for already available configmap
+```bash
      kubectl create configmap multi-file-configmap --from-file=config1.txt --from-file=config2.txt
 ```
-- #### Delete command for already available configmap
+ - Delete command for already available configmap
 
 ```bash
      kubectl delete configmap <configmap_name>
@@ -179,10 +178,8 @@ config2.txt with content:
      kubectl delete cm <configmap_name>
 ```
 
-## K8s ConfigMap yml file to create configmap
+- K8s ConfigMap yml file to create configmap
 Sample Template
-=======
-## 4) K8s ConfigMap yml file Sample Template
 
 ```Yaml
 apiVersion: v1
@@ -194,7 +191,7 @@ data:
   key2: val2
   key3: val3
 ```
-## Pod yml file with ConfigMap to create pod.
+- Pod yml file with ConfigMap to create pod.
 Sample Template 
 
 ```Yaml
@@ -211,7 +208,7 @@ spec:
         name: <enter_already_create-configmap_name>
 ```
 
-## Detailed-Description-Of-Secrets
+# Detailed-Description-Of-Secrets
 Secret is an object used to store sensitive information, such as passwords, OAuth tokens, SSH keys, or any other sensitive data. The purpose of using Secrets is to avoid putting this sensitive information directly in your Pod or Deployment configuration files, which could be exposed.
 
 
