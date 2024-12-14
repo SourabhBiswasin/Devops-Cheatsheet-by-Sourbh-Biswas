@@ -1,4 +1,4 @@
-# Cheat sheet links
+# Kubernetes Cheetsheey by Sourabh Biswas
 
 https://quickref.me/kubernetes
 
@@ -26,19 +26,19 @@ To Run kubernetes production grade cluster on cloud distribution
 
 
 
-# Resources of Kubernetes
+## Resources of Kubernetes
 
-1. ## [Pod](#detailed-description-of-pod)
-2) ## [Service](#detailed-description-of-service)
-3) ## [ReplicaSet](#detailed-description-of-replicaset)
-4) ## [ConfigMap](#detailed-description-of-configmap)
-5) ## [Secrets](#detailed-description-of-secrets)
-6) ## [Deployment](#detailed-description-of-deployment) 
-7) ## [Namespace](#detailed-description-of-namespace)
-8) ## [Volume](#detailed-description-of-volume)
-9) ## [Ingress](#detailed-description-of-ingress)
-10) ## [Istio, Service meash and Sidecar container](#detailed-description-of-istio)
-11) ## [RBAC](#detailed-description-of-rbac)
+1. ### [Pod](#detailed-description-of-pod)
+2) ### [Service](#detailed-description-of-service)
+3) ### [ReplicaSet](#detailed-description-of-replicaset)
+4) ### [ConfigMap](#detailed-description-of-configmap)
+5) ### [Secrets](#detailed-description-of-secrets)
+6) ### [Deployment](#detailed-description-of-deployment) 
+7) ### [Namespace](#detailed-description-of-namespace)
+8) ### [Volume](#detailed-description-of-volume)
+9) ### [Ingress](#detailed-description-of-ingress)
+10) ### [Istio, Service meash and Sidecar container](#detailed-description-of-istio)
+11) ### [RBAC](#detailed-description-of-rbac)
 
 # Detailed Description of Pod
 Pod represents a single instance/server of a running process in your cluster and can contain one or more containers.
@@ -66,7 +66,7 @@ spec:
 ```
 
 
-# Detailed Description of Service
+## Detailed Description of Service
 Service work on top of Pod. Services enable communication between different components in a Kubernetes cluster, allowing stable networking for Pods even if they are ephemeral(pod are down) and their IP addresses change.
 
  - K8s Service yml file to create Service inside k8s
@@ -86,7 +86,7 @@ spec:
     nodePort: 30001
   type: NodePort
   ```
-# Detailed-Description-Of-Replicaset
+## Detailed-Description-Of-Replicaset
 ReplicaSet ensures a specified number of identical Pods are running at any given time. It provides high availability and scaling by automatically creating or deleting Pods to maintain the desired state.
 
  - K8s ReplicaSet yml file to create Replicaset inside k8s
@@ -112,7 +112,7 @@ spec:
       - name: nginx       
         image: nginx
 ```
-# Detailed-Description-Of-Configmap
+## Detailed-Description-Of-Configmap
 
  - Create a ConfigMap from Literal Values
 
@@ -208,7 +208,7 @@ spec:
         name: <enter_already_create-configmap_name>
 ```
 
-# Detailed-Description-Of-Secrets
+## Detailed-Description-Of-Secrets
 Secret is an object used to store sensitive information, such as passwords, OAuth tokens, SSH keys, or any other sensitive data. The purpose of using Secrets is to avoid putting this sensitive information directly in your Pod or Deployment configuration files, which could be exposed.
 
 
@@ -295,7 +295,7 @@ spec:
           key: <key_valuename_like_password>
 ```
 
-# Detailed-Description-Of-Deployment
+## Detailed-Description-Of-Deployment
 Deployment is a resource used to manage and maintain the desired state of pod during updation of pod. It provides Rolling deployments updates to Pods ensuring your application is running reliably duriing updates. Updates are exposed to an increasing percentage of users incrementally until fully released.
 
 Sample Template for deployment
@@ -327,7 +327,7 @@ Roll Back Deployment command. It will restore previously deployment. Previous de
 kubectl rollout undo deployment <enter_deployment_name>
 ```
 
-# Detailed-Description-Of-Namespace
+## Detailed-Description-Of-Namespace
 A namespace in Kubernetes is a logical partitioning mechanism that allows you to divide a single Kubernetes cluster into multiple virtual clusters. This enables better organization, resource isolation, and management of workloads within the cluster.
 
 Command to create a namespace
@@ -335,7 +335,7 @@ Command to create a namespace
 kubectl run nginx --image=nginx --namespace=<insert-namespace-name-here>
 ```
 
-# Detailed-Description-of-Volume
+## Detailed-Description-of-Volume
 A Container's file system lives only as long as the Container does. So when a Container terminates and restarts, filesystem changes are lost. For more consistent storage that is independent of the Container, you can use a Volume.
 
 
@@ -368,7 +368,7 @@ Projected Volumes
 Ephemeral Volumes
 
 
-# detailed-description-of-ingress
+## detailed-description-of-ingress
 
 Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource.
 You must have an Ingress controller to satisfy an Ingress. Only creating an Ingress resource has no effect.
@@ -401,7 +401,7 @@ spec:
               number: 80
 ```
 
-# Detailed-Description-of-Istio
+## Detailed-Description-of-Istio
 
 - Sidecr Container
 
