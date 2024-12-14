@@ -14,6 +14,7 @@ Or K8s Service name
 6) ## [Deployment](#detailed-description-of-deployment) 
 
 ------------Pending Topics------------------------------
+
 7) ## [Namespace](#detailed-description-of-namespace) 
 8) ## [Ingress](#detailed-description-of-namespace)
 9) ## [Istio](#detailed-description-of-namespace)
