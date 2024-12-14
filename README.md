@@ -52,6 +52,7 @@ Devops learning
 - Monitoring by grafanad and prometheus
 - New Relic
 - Datadog
+- EFK or elasticsearch
 
 --Day 8--
 Azure Cloud Services
