@@ -212,7 +212,7 @@ spec:
 Secret is an object used to store sensitive information, such as passwords, OAuth tokens, SSH keys, or any other sensitive data. The purpose of using Secrets is to avoid putting this sensitive information directly in your Pod or Deployment configuration files, which could be exposed.
 
 
-- ### Create a secret from literal values
+- Create a secret from literal values
 
 ```bash
      kubectl create secret generic <give_name_of_secret> --from-literal username=admin --from-literal password='P@ssw0rd'
@@ -228,15 +228,17 @@ The output will be base64 encoded. To decode, you can use:
     echo -n “P@ssw0rd” | base64
 ```
 
-- ### Create a Secret from a File
+- Create a Secret from a File
 
 Create a file with your sensitive data
 
 username.txt and add content inside the file as: -
+
 ```bash
 admin
 ```
 password.txt and add content inside the file as: -
+
 ```bash
 admin@123
 ```
@@ -251,7 +253,7 @@ admin@123
 ```
 The output will be base64 encoded.
 
-- ### Create a YAML file for the secret
+- Create a YAML file for the secret
 
 ```Yaml
 apiVersion: v1
@@ -265,11 +267,12 @@ data:
 ```
 
 Apply the YAML file to create secret
+
 ```bash
 kubectl apply -f my-manifest-secret.yaml
 ```
 
-- ### Create a pod that uses the secret:
+- Create a pod that uses the secret:
 ```Yaml
 apiVersion: v1
 kind: Pod
