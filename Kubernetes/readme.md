@@ -12,8 +12,12 @@ Or K8s Service name
 4) ## [ConfigMap](#detailed-description-of-configmap)
 5) ## [Secrets](#detailed-description-of-secrets)
 6) ## [Deployment](#detailed-description-of-deployment) 
-7) ## [Deployment](#detailed-description-of-deployment) 
 
+------------Pending Topics------------------------------
+7) ## [Namespace](#detailed-description-of-namespace) 
+8) ## [Ingress](#detailed-description-of-namespace)
+9) ## [Istio](#detailed-description-of-namespace)
+10) ## [Volume](#detailed-description-of-namespace)
 
 ## Detailed Description of Pod
 Pod represents a single instance/server of a running process in your cluster and can contain one or more containers.
