@@ -1,0 +1,1 @@
+Trivy to scan docker images
