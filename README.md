@@ -55,6 +55,7 @@ Devops learning
 - EFK or elasticsearch
 
 --Day 8--
-Azure Cloud Services
-GCP Cloud Services
-Oracle Cloud Services
+- AWS
+- Azure
+- GCP
+- Oracle
