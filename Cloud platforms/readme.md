@@ -1,0 +1,6 @@
+- AWS
+- Azure
+- GCP
+- Oracle
+- Digital Ocean
+- Utho
