@@ -85,6 +85,9 @@ git merge <branch_name>
 7) To add branch in the remote repo/ do it before push the change to remote repo.
 git push --set-upstream origin <branch_name>
 
+8) Rename a Local Branch
+git branch -m <branch_name_which_need_to_renamed> <mention_newbranch_name>
+
 8) Delete a Local Branch
 git branch -d <branch_name>
 
