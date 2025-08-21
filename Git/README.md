@@ -1,30 +1,27 @@
-#Git Cheat command cheat sheet
+# Git Cheat command cheat sheet
 
-https://www.geeksforgeeks.org/git-cheat-sheet/?ref=lbp
+[Git Cheat Sheet on GeeksforGeeks](https://www.geeksforgeeks.org/git-cheat-sheet/?ref=lbp)
 
-#Git Cheat command cheat sheet
+## Login to GitHub account using Personal token on window: -
 
-https://www.geeksforgeeks.org/git-cheat-sheet/?ref=lbp
+- download the gh cli from [gh CLI releases](https://github.com/cli/cli/releases) - download the Windows 386 installer.
 
-# Login to GitHub account using Personal token on window: -
+- after installation open PowerShell in window and run gh --version to confirm the installation.
 
-- download the gh cli from https://github.com/cli/cli/releases Download window 386 installer. 
+- run `gh auth login`, after pop-up select GitHub.com by enter, then select SSH, enter `n` to not generate new SSH key and use access token, then select Personal access token option, Paste authentication token.
 
-- after installation open PowerShell in window and run gh --version to confirm the installation. 
-
-- run `gh auth login`, after pop-up select GitHub.com by enter, then select SSH, enter `n` to not generate new SSH key and use access token, then select Personal access token option, Paste authentication token. 
-
-- Steps to generate Personal access token 
-  - Go to GitHub setting, at bottom sidebar select developer setting select Personal access token, select Fine grain token give necessary access and token then generate token. Copy the generate token. 
+- Steps to generate Personal access token
+  - Go to GitHub setting, at bottom sidebar select developer setting select Personal access token, select Fine grain token give necessary access and token then generate token. Copy the generate token.
   - Command to check already setup accounts `gh auth status`
 
 - Steps to remove or switch between different accounts.
- - Remove GitHub Account for Git (VS Code / Git CLI)
-  - `git config --global --unset user.name <Your username>`
-  - `git config --global --unset user.email <you@example.com>`
+- Remove GitHub Account for Git (VS Code / Git CLI)
+- `git config --global --unset user.name <Your username>`
+- `git config --global --unset user.email <you@example.com>`
 
 then again run command to setup new account
 {
+
 1) `git config --global user.name <Your Name>`
 Set your name for commits.
 
@@ -33,13 +30,15 @@ Set your email for commits.
 }
 
 - Steps to remove Existing GitHub CLI Auth
- - `gh auth logout`
- - `git credential-manager erase`
+- `gh auth logout`
+- `git credential-manager erase`
 
 then again run command to setup new account
- - `gh auth login`
 
-FYI: - 
+- `gh auth login`
+
+FYI: -
+
 - Use HTTPS remotes: How to Ensure VS Code Uses Your gh Account
 `git remote set-url origin https://github.com/your-username/your-repo.git`
 
@@ -48,7 +47,8 @@ FYI: -
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
-# Setup and Configuration
+## Setup and Configuration
+
 1) `git config --global user.name <Your Name>`
 Set your name for commits.
 
@@ -64,8 +64,10 @@ Set your email for commits.
 5) Set Up Default Text Editor VS Code
 `git config --global core.editor <code --wait>`
 
---------------------------------------------------------------------------------------------------------------------------------
-# Initialize and Clone Repositories
+-------------------------------------------------------------------
+
+## Initialize and Clone Repositories
+
 1) `git init`
 Initialize a new Git repository.
 
@@ -74,7 +76,8 @@ Clone an existing repository from a URL.
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-# Basic Operations
+## Basic Operations
+
 1) `git status`
 Show the current state of the working directory and staging area.
 
@@ -88,7 +91,7 @@ Stage all changes in the directory for commit.
 Temporarily save your changes. Use When code or feature is not completed but need to save changes of half done work
 
 5) `git stash list`
-List saved changes during git stash command 
+List saved changes during git stash command
 
 6) `git stash pop`
 Applies the stashed changes and removes them from the stash list.
@@ -96,13 +99,13 @@ Applies the stashed changes and removes them from the stash list.
 7) `git stash apply`
 Applies the stashed changes but does not remove them from the stash list.
 
-8) `git commit -m <Commit message>`
+8) `git commit -m "Commit message"`
 Commit the staged changes with a message.
 
-9) `git commit -am <Commit message>`
+9) `git commit -am "Commit message"`
 Add and commit changes in one command (for tracked files).
 
-10) `git revert <commit_hash>`
+10) `git revert "commit_hash"`
 Undo changes introduced by a specific commit
 
 11) `git revert HEAD`
@@ -112,7 +115,8 @@ Undo changes introduced by a last commit
 Modify the commit message.
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-# Branching, Merging, Delete branch
+
+## Branching, Merging, Delete branch
 
 1) List all local branches.
 `git branch`
@@ -162,7 +166,7 @@ git checkout feature-branch(Note: - Or the branch Name)
 git rebase main
 This rewrites the feature-branch commit history to include the latest commits from main.
 
-git rebase -i HEAD~n (Note: - Replace n with the number of commits you want to interactively rebase) 
+git rebase -i HEAD~n (Note: - Replace n with the number of commits you want to interactively rebase)
 Open Interactive Rebase (Use interactive mode to edit, squash, or reorder commits)
 
 Note:-
@@ -187,11 +191,13 @@ git rebase --abort
 If you want to cancel the rebase
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-# Pull Push & Remote Operations
+
+## Pull Push & Remote Operations
+
 1) Push your commits to the remote repository.
 `git push`
 
-2) Push a specific branch to the remote repository. 
+2) Push a specific branch to the remote repository.
 `git push origin <branch_name>`
 
 3) Fetch and merge changes from the remote repository.
@@ -203,10 +209,10 @@ If you want to cancel the rebase
 5) `git push <repo name only> <branch name>`
 To push repo change to a particular branch
 
-6) View remote repo location/version/URLS. 
+6) View remote repo location/version/URLS.
 `git remote -v`
 
-7) Add a remote repository. 
+7) Add a remote repository.
 `git remote add origin <repository_url>`
 
 8) Update the Remote URL
@@ -218,9 +224,9 @@ To push repo change to a particular branch
 10) Allow Merging of Unrelated Histories (Troubleshoot step)
 `git pull origin main --allow-unrelated-histories`
 
-
 ------------------------------------------------------------------------------------------------------------------------------------------
-#Undo Changes OR Rename commit messages
+
+## Undo Changes OR Rename commit messages
 
 1) Undo Changes
 `git reset <file>`
@@ -230,7 +236,7 @@ Unstage a file.
 Undo the last commit but keep changes staged.
 
 3) `git reset --hard HEAD~1 or git reset --hard`
-Undo the last commit and discard all changes. After `~` sign we will be directed git will consider the head below to mentioned number. 
+Undo the last commit and discard all changes. After `~` sign we will be directed git will consider the head below to mentioned number.
 
 4) `git revert <commit ID name>`
 Create a new commit that undoes the changes made by a mentioned commit ID. It is a safe operation compare to git reset.
@@ -238,7 +244,7 @@ Create a new commit that undoes the changes made by a mentioned commit ID. It is
 5) `git revert <commit ID name> --hard`
 Hard revert the mentioned commit ID and delete the files as well from the branch permanentely.
 
-4) `git commit --amend -m `New commit message``
+4) `git commit --amend -m`New commit message``
 Rename the last commit message
 
 5) `git commit --amend`
@@ -247,9 +253,9 @@ modifies the most recent commit in Git by combining staged changes with it
 6) #Steps to Reword/rewrite an Older Commit
 `git rebase -i HEAD~n`
 
-Note: - Replace `n` with the number of commits you want to see and edit. 
+Note: - Replace `n` with the number of commits you want to see and edit.
 
-Example: - 
+Example: -
 `git rebase -i HEAD~3`
 
 Example Output
@@ -267,9 +273,9 @@ Modify the Commit Message:
 Git will open an editor where you can edit the commit message. Save and close the editor when done.
 Git will then apply the changes and rewrite the history.
 
-
 -------------------------------------------------------------------------------------------------------------------------------------------
-#History & Stashing
+
+## History & Stashing
 
 1) Viewing History
 `git log`
@@ -282,11 +288,12 @@ View a simplified commit history.
 `git stash`
 Temporarily save changes without committing.
 
-4) Reapply stashed changes 
+4) Reapply stashed changes
 `git stash apply`
 
 ---------------------------------------------------------------------------------------------------------------------------
-#Remove and Move Files
+
+## Remove and Move Files
 
 1) Remove Files
 `git rm <file>`
@@ -301,7 +308,7 @@ Remove a folder/file from the stage.
 
 4) Remove folder Recursively/Forcefully
 `git rm -rf <folder name>`
- 
+
 5) Rename old_file.txt to new_file.txt:
 `git mv old_file.txt new_file.txt`
 
