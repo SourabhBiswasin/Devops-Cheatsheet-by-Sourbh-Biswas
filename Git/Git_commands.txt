@@ -1,68 +1,18 @@
-#Git Cheat command cheat sheet
-
-https://www.geeksforgeeks.org/git-cheat-sheet/?ref=lbp
-
-#Git Cheat command cheat sheet
-
-https://www.geeksforgeeks.org/git-cheat-sheet/?ref=lbp
-
-# Login to GitHub account using Personal token on window: -
-
-- download the gh cli from https://github.com/cli/cli/releases Download window 386 installer. 
-
-- after installation open PowerShell in window and run gh --version to confirm the installation. 
-
-- run `gh auth login`, after pop-up select GitHub.com by enter, then select SSH, enter `n` to not generate new SSH key and use access token, then select Personal access token option, Paste authentication token. 
-
-- Steps to generate Personal access token 
-  - Go to GitHub setting, at bottom sidebar select developer setting select Personal access token, select Fine grain token give necessary access and token then generate token. Copy the generate token. 
-  - Command to check already setup accounts `gh auth status`
-
-- Steps to remove or switch between different accounts.
- - Remove GitHub Account for Git (VS Code / Git CLI)
-  - `git config --global --unset user.name "Your username"`
-  - `git config --global --unset user.email "you@example.com"`
-
-then again run command to setup new account
-{
-1) `git config --global user.name "Your Name"`
-Set your name for commits.
-
-2) `git config --global user.email "you@example.com"`
-Set your email for commits.
-}
-
-- Steps to remove Existing GitHub CLI Auth
- - `gh auth logout`
- - `git credential-manager erase`
-
-then again run command to setup new account
- - `gh auth login`
-
-FYI: - 
-- Use HTTPS remotes: How to Ensure VS Code Uses Your gh Account
-`git remote set-url origin https://github.com/your-username/your-repo.git`
-
-- Ensure Git Credential Manager is installed:
-`git config --global credential.helper manager`
-
--------------------------------------------------------------------------------------------------------------------------------------
-
 # Setup and Configuration
-1) `git config --global user.name "Your Name"`
+1) git config --global user.name "Your Name"
 Set your name for commits.
 
-2) `git config --global user.email "you@example.com"`
+2) git config --global user.email "you@example.com"
 Set your email for commits.
 
 3) Verify Configuration:
 `git config --list`
 
 4) Set Up Default Text Editor Nano
-`git config --global core.editor "nano"`
+git config --global core.editor "nano"
 
 5) Set Up Default Text Editor VS Code
-`git config --global core.editor "code --wait"`
+git config --global core.editor "code --wait"
 
 --------------------------------------------------------------------------------------------------------------------------------
 # Initialize and Clone Repositories
@@ -96,10 +46,10 @@ Applies the stashed changes and removes them from the stash list.
 7) `git stash apply`
 Applies the stashed changes but does not remove them from the stash list.
 
-8) `git commit -m "Commit message"`
+8) git commit -m "Commit message"
 Commit the staged changes with a message.
 
-9) `git commit -am "Commit message"`
+9) git commit -am "Commit message"
 Add and commit changes in one command (for tracked files).
 
 10) `git revert <commit_hash>`
@@ -229,8 +179,8 @@ Unstage a file.
 2) `git reset --soft HEAD~1`
 Undo the last commit but keep changes staged.
 
-3) `git reset --hard HEAD~1 or git reset --hard`
-Undo the last commit and discard all changes. After `~` sign we will be directed git will consider the head below to mentioned number. 
+3) git reset --hard HEAD~1 or git reset --hard
+Undo the last commit and discard all changes. After "~" sign we will be directed git will consider the head below to mentioned number. 
 
 4) `git revert <commit ID name>`
 Create a new commit that undoes the changes made by a mentioned commit ID. It is a safe operation compare to git reset.
@@ -238,7 +188,7 @@ Create a new commit that undoes the changes made by a mentioned commit ID. It is
 5) `git revert <commit ID name> --hard`
 Hard revert the mentioned commit ID and delete the files as well from the branch permanentely.
 
-4) `git commit --amend -m `New commit message``
+4) git commit --amend -m "New commit message"
 Rename the last commit message
 
 5) `git commit --amend`
