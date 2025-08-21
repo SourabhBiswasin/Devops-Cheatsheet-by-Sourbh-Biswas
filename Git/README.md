@@ -20,15 +20,15 @@ https://www.geeksforgeeks.org/git-cheat-sheet/?ref=lbp
 
 - Steps to remove or switch between different accounts.
  - Remove GitHub Account for Git (VS Code / Git CLI)
-  - `git config --global --unset user.name "Your username"`
-  - `git config --global --unset user.email "you@example.com"`
+  - `git config --global --unset user.name <Your username>`
+  - `git config --global --unset user.email <you@example.com>`
 
 then again run command to setup new account
 {
-1) `git config --global user.name "Your Name"`
+1) `git config --global user.name <Your Name>`
 Set your name for commits.
 
-2) `git config --global user.email "you@example.com"`
+2) `git config --global user.email <you@example.com>`
 Set your email for commits.
 }
 
@@ -49,20 +49,20 @@ FYI: -
 -------------------------------------------------------------------------------------------------------------------------------------
 
 # Setup and Configuration
-1) `git config --global user.name "Your Name"`
+1) `git config --global user.name <Your Name>`
 Set your name for commits.
 
-2) `git config --global user.email "you@example.com"`
+2) `git config --global user.email <you@example.com>`
 Set your email for commits.
 
 3) Verify Configuration:
 `git config --list`
 
 4) Set Up Default Text Editor Nano
-`git config --global core.editor "nano"`
+`git config --global core.editor <nano>`
 
 5) Set Up Default Text Editor VS Code
-`git config --global core.editor "code --wait"`
+`git config --global core.editor <code --wait>`
 
 --------------------------------------------------------------------------------------------------------------------------------
 # Initialize and Clone Repositories
@@ -96,10 +96,10 @@ Applies the stashed changes and removes them from the stash list.
 7) `git stash apply`
 Applies the stashed changes but does not remove them from the stash list.
 
-8) `git commit -m "Commit message"`
+8) `git commit -m <Commit message>`
 Commit the staged changes with a message.
 
-9) `git commit -am "Commit message"`
+9) `git commit -am <Commit message>`
 Add and commit changes in one command (for tracked files).
 
 10) `git revert <commit_hash>`
