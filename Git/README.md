@@ -12,23 +12,23 @@ https://www.geeksforgeeks.org/git-cheat-sheet/?ref=lbp
 
 - after installation open PowerShell in window and run gh --version to confirm the installation. 
 
-- run gh auth login, after pop-up select GitHub.com by enter, then select SSH, enter n to not generate new SSH key and use access token. then select Paste an authentication token, then after pop-up enter your Personal access token. 
+- run `gh auth login`, after pop-up select GitHub.com by enter, then select SSH, enter `n` to not generate new SSH key and use access token, then select Personal access token option, Paste authentication token. 
 
 - Steps to generate Personal access token 
   - Go to GitHub setting, at bottom sidebar select developer setting select Personal access token, select Fine grain token give necessary access and token then generate token. Copy the generate token. 
   - Command to check already setup accounts `gh auth status`
 
-- Steps to remove or switch between different account.
+- Steps to remove or switch between different accounts.
  - Remove GitHub Account for Git (VS Code / Git CLI)
-  - git config --global --unset user.name `Your username`
-  - git config --global --unset user.email `you@example.com`
+  - `git config --global --unset user.name "Your username"`
+  - `git config --global --unset user.email "you@example.com"`
 
 then again run command to setup new account
 {
-1) git config --global user.name `Your Name`
+1) `git config --global user.name "Your Name"`
 Set your name for commits.
 
-2) git config --global user.email `you@example.com`
+2) `git config --global user.email "you@example.com"`
 Set your email for commits.
 }
 
@@ -41,118 +41,118 @@ then again run command to setup new account
 
 FYI: - 
 - Use HTTPS remotes: How to Ensure VS Code Uses Your gh Account
-git remote set-url origin https://github.com/your-username/your-repo.git
+`git remote set-url origin https://github.com/your-username/your-repo.git`
 
 - Ensure Git Credential Manager is installed:
-git config --global credential.helper manager
+`git config --global credential.helper manager`
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
 # Setup and Configuration
-1) git config --global user.name `Your Name`
+1) `git config --global user.name "Your Name"`
 Set your name for commits.
 
-2) git config --global user.email `you@example.com`
+2) `git config --global user.email "you@example.com"`
 Set your email for commits.
 
 3) Verify Configuration:
-git config --list
+`git config --list`
 
 4) Set Up Default Text Editor Nano
-git config --global core.editor `nano`
+`git config --global core.editor "nano"`
 
 5) Set Up Default Text Editor VS Code
-git config --global core.editor `code --wait`
+`git config --global core.editor "code --wait"`
 
 --------------------------------------------------------------------------------------------------------------------------------
 # Initialize and Clone Repositories
-1) git init
+1) `git init`
 Initialize a new Git repository.
 
-2) git clone <repository_url>
+2) `git clone <repository_url>`
 Clone an existing repository from a URL.
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
 # Basic Operations
-1) git status
+1) `git status`
 Show the current state of the working directory and staging area.
 
-2) git add <file>
+2) `git add <file>`
 Stage a specific file for commit.
 
-3) git add .
+3) `git add .`
 Stage all changes in the directory for commit.
 
-4) git stash 
+4) `git stash`
 Temporarily save your changes. Use When code or feature is not completed but need to save changes of half done work
 
-5) git stash list
+5) `git stash list`
 List saved changes during git stash command 
 
-6) git stash pop
+6) `git stash pop`
 Applies the stashed changes and removes them from the stash list.
 
-7) git stash apply	
+7) `git stash apply`
 Applies the stashed changes but does not remove them from the stash list.
 
-8) git commit -m `Commit message`
+8) `git commit -m "Commit message"`
 Commit the staged changes with a message.
 
-9) git commit -am `Commit message`
+9) `git commit -am "Commit message"`
 Add and commit changes in one command (for tracked files).
 
-10) git revert <commit_hash>
+10) `git revert <commit_hash>`
 Undo changes introduced by a specific commit
 
-11) git revert HEAD
+11) `git revert HEAD`
 Undo changes introduced by a last commit
 
-12) git reword
+12) `git reword`
 Modify the commit message.
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 # Branching, Merging, Delete branch
 
 1) List all local branches.
-git branch
+`git branch`
 
 2) List all remote branches.
-git branch -r
+`git branch -r`
 
 3) Create a new branch.
-git branch <branch_name>
+`git branch <branch_name>`
 
 4) Switch to a specific branch.
-git checkout <branch_name>
+`git checkout <branch_name>`
 
 5) Create and switch to a new branch.
-git checkout -b <branch_name>
+`git checkout -b <branch_name>`
 
 6) Merge the specified branch into the current branch.
-git merge <branch_name>
+`git merge <branch_name>`
 
 7) To add branch in the remote repo/ do it before push the change to remote repo.
-git push --set-upstream origin <branch_name>
+`git push --set-upstream origin <branch_name>`
 
 8) Rename a Local Branch
-git branch -m <branch_name_which_need_to_renamed> <mention_newbranch_name>
+`git branch -m <branch_name_which_need_to_renamed> <mention_newbranch_name>`
 
 8) Delete a Local Branch
-git branch -d <branch_name>
+`git branch -d <branch_name>`
 
 8) Force Delete a local Branch
-git branch -D <branch_name>
+`git branch -D <branch_name>`
 
 9) Delete a Remote Branch
-git push origin --delete <branch_name>
+`git push origin --delete <branch_name>`
 
 10) Fetch and Prune Locale Stale Branches
-git fetch --prune
+`git fetch --prune`
 
 11) Fetch and Prune Specific Remote Branches
-git fetch --prune <remote_name>
-git fetch --prune origin
+`git fetch --prune <remote_name>`
+`git fetch --prune origin`
 
 12) **Git rebase command**
 Common Use Cases for git rebase is updating a branch with changes from the main branch.
@@ -189,68 +189,68 @@ If you want to cancel the rebase
 ------------------------------------------------------------------------------------------------------------------------------------------
 # Pull Push & Remote Operations
 1) Push your commits to the remote repository.
-git push
+`git push`
 
 2) Push a specific branch to the remote repository. 
-git push origin <branch_name>
+`git push origin <branch_name>`
 
 3) Fetch and merge changes from the remote repository.
-git pull <write_origin> <branch_name>
+`git pull <write_origin> <branch_name>`
 
 4) Push local repo to remote repository.
-git push origin <git url>
+`git push origin <git url>`
 
-5) git push <repo name only> <branch name>
+5) `git push <repo name only> <branch name>`
 To push repo change to a particular branch
 
 6) View remote repo location/version/URLS. 
-git remote -v
+`git remote -v`
 
 7) Add a remote repository. 
-git remote add origin <repository_url>
+`git remote add origin <repository_url>`
 
 8) Update the Remote URL
-git remote set-url origin https://github.com/SourabhBiswasin/devops.git
+`git remote set-url origin https://github.com/SourabhBiswasin/devops.git`
 
 9)Force Push
-git push --force
+`git push --force`
 
-10) Allow Merging of Unrelated Histories (Trouble shoot step)
-git pull origin main --allow-unrelated-histories
+10) Allow Merging of Unrelated Histories (Troubleshoot step)
+`git pull origin main --allow-unrelated-histories`
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 #Undo Changes OR Rename commit messages
 
 1) Undo Changes
-git reset <file>
+`git reset <file>`
 Unstage a file.
 
-2) git reset --soft HEAD~1
+2) `git reset --soft HEAD~1`
 Undo the last commit but keep changes staged.
 
-3) git reset --hard HEAD~1 or git reset --hard
+3) `git reset --hard HEAD~1 or git reset --hard`
 Undo the last commit and discard all changes. After `~` sign we will be directed git will consider the head below to mentioned number. 
 
-4) git revert <commit ID name>
+4) `git revert <commit ID name>`
 Create a new commit that undoes the changes made by a mentioned commit ID. It is a safe operation compare to git reset.
 
-5) git revert <commit ID name> --hard
+5) `git revert <commit ID name> --hard`
 Hard revert the mentioned commit ID and delete the files as well from the branch permanentely.
 
-4) git commit --amend -m `New commit message`
+4) `git commit --amend -m `New commit message``
 Rename the last commit message
 
-5) git commit --amend
+5) `git commit --amend`
 modifies the most recent commit in Git by combining staged changes with it
 
 6) #Steps to Reword/rewrite an Older Commit
-git rebase -i HEAD~n
+`git rebase -i HEAD~n`
 
 Note: - Replace `n` with the number of commits you want to see and edit. 
 
 Example: - 
-git rebase -i HEAD~3
+`git rebase -i HEAD~3`
 
 Example Output
 pick abc123 Commit message 1
@@ -272,46 +272,46 @@ Git will then apply the changes and rewrite the history.
 #History & Stashing
 
 1) Viewing History
-git log
+`git log`
 View commit history.
 
-2) git log --oneline
+2) `git log --oneline`
 View a simplified commit history.
 
 3) Stashing
-git stash
+`git stash`
 Temporarily save changes without committing.
 
 4) Reapply stashed changes 
-git stash apply
+`git stash apply`
 
 ---------------------------------------------------------------------------------------------------------------------------
 #Remove and Move Files
 
 1) Remove Files
-git rm <file>
+`git rm <file>`
 Remove a file from the repository and stage the removal.
 
 2) Remove Tracked or Tracking files
-git rm -r --cached <folder name or files name>
+`git rm -r --cached <folder name or files name>`
 Remove a folder/file from the stage.
 
 3) Remove folder Recursively( Delete everything in the folder including sub-folders and files)
-git rm -r <folder name>
+`git rm -r <folder name>`
 
 4) Remove folder Recursively/Forcefully
-git rm -rf <folder name>
+`git rm -rf <folder name>`
  
 5) Rename old_file.txt to new_file.txt:
-git mv old_file.txt new_file.txt
+`git mv old_file.txt new_file.txt`
 
 6) Move a File to a Directory(example.txt to the docs folder:}
-git mv example.txt docs/
+`git mv example.txt docs/`
 
 7) Rename or Move a Directory(old_folder to new_folder)
-git mv old_folder new_folder
+`git mv old_folder new_folder`
 
 8) Move old_folder to new_folder
-git mv old_folder new_folder
+`git mv old_folder new_folder`
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
